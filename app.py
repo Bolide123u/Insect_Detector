@@ -1,6 +1,11 @@
-
+# Installer les bibliothèques nécessaires
 !pip install streamlit opencv-python matplotlib scikit-image pillow pyngrok
 
+# Importer le module streamlit pour vérifier qu'il est bien installé
+import streamlit
+
+# Créer un fichier temporaire pour l'application Streamlit
+%%writefile app.py
 import streamlit as st
 import cv2
 import numpy as np
@@ -198,3 +203,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Lancer Streamlit avec ngrok
+from pyngrok import ngrok
+import subprocess
+
+# Démarrer Streamlit en arrière-plan
+!streamlit run app.py &>/dev/null&
+
+# Créer un tunnel avec ngrok
+public_url = ngrok.connect(8501)
+print(f"L'application Streamlit est accessible à l'adresse: {public_url}")
