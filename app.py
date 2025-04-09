@@ -1,3 +1,6 @@
+
+!pip install streamlit opencv-python matplotlib scikit-image pillow pyngrok
+
 import streamlit as st
 import cv2
 import numpy as np
