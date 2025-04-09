@@ -1,0 +1,12 @@
+streamlit
+cv2
+numpy
+matplotlib.pyplot
+skimage
+skimage.segmentation
+os
+io
+PIL
+tempfile
+zipfile
+base64
